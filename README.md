@@ -2,7 +2,7 @@
 This repository is created to track progress in web development and store completed projects. It will contain various code samples, completed assignments, learning projects and any other files related to studying web development.
 
 # Repository structure
-In the root of this repository, there are folders containing completed projects, divided by topics and technologies (e.g., HTML, CSS, JavaScript, React, etc.).
+In the root of this repository, there are folders containing completed projects, divided by topics and technologies (e.g., HTML, CSS, JavaScript, etc.).
 
 Each folder corresponds to a specific topic, course, or project. They contain code, descriptions, instructions, and all materials used in the process of creating a project/assignment.
 
