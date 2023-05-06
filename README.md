@@ -4,10 +4,10 @@ This repository is created to track progress in web development and store comple
 # Repository structure
 In the root of this repository, there are folders containing completed projects, divided by topics and technologies (e.g., HTML, CSS, JavaScript, etc.).
 
-Each folder corresponds to a specific topic, course, or project. They contain code, descriptions, instructions, and all materials used in the process of creating a project/assignment.
+Each folder corresponds to a specific topic, course, or project. They contain code, descriptions, instructions, and all materials used in the process of creating a project.
 
 # Purpose
-The purpose of this repository is to provide the ability to track your progress and store completed projects in one place. Moreover, it can be useful for employment purposes to showcase the skills and experience gained during the learning process.
+The purpose of this repository is to provide the ability to track my progress and store completed projects in one place. Moreover, it can be useful for employment purposes to showcase the skills and experience gained during the learning process.
 
 # How to use this repository
 If you're starting your journey in web development or want to expand your knowledge, you can use this repository for learning. Just choose the topic or project that interests you and start studying the material.
