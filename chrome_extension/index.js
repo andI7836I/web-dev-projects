@@ -9,17 +9,45 @@ inputBtn.addEventListener("click", function() {
     inputEl.value = ""
 })
 
+inputEl.addEventListener("keyup", function(event) {
+  if (event.key === "Enter") {
+    inputBtn.click();
+  }
+});
+
+// function renderLeads(){
+//     let listItems = ""
+//     for (i in myLeads){
+//         // listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
+//         listItems += `
+//             <li>
+//                 <a target='_blank' href='${myLeads[i]}'>
+//                     ${myLeads[i]}
+//                 </a>
+//             </li>
+//         `
+//     }
+//     ulEl.innerHTML = listItems 
+//     }
 function renderLeads(){
-    let listItems = ""
-    for (i in myLeads){
-        // listItems += "<li><a target='_blank' href='" + myLeads[i] + "'>" + myLeads[i] + "</a></li>"
+    let listItems = "";
+    for (let i in myLeads){
+        let url = myLeads[i];
+        if (!isAbsoluteURL(url)) {
+            url = "http://" + url;
+        }
         listItems += `
             <li>
-                <a target='_blank' href='${myLeads[i]}'>
+                <a target='_blank' href='${url}'>
                     ${myLeads[i]}
                 </a>
             </li>
-        `
+        `;
     }
-    ulEl.innerHTML = listItems 
-    }
+    ulEl.innerHTML = listItems;
+}
+
+function isAbsoluteURL(url) {
+    const pattern = /^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/;
+    return pattern.test(url);
+}
