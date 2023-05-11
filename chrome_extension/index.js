@@ -1,12 +1,22 @@
 let myLeads = []
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
+const delBtn = document.getElementById("delete-btn")
 const ulEl = document.getElementById("ul-el")
+const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
+
+// localStorage.setItem("myLeads", "www.example.com")
+if (leadsFromLocalStorage){
+    myLeads = leadsFromLocalStorage
+    renderLeads()
+}
 
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
     renderLeads()
     inputEl.value = ""
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+    renderLeads()
 })
 
 inputEl.addEventListener("keyup", function(event) {
@@ -14,6 +24,12 @@ inputEl.addEventListener("keyup", function(event) {
     inputBtn.click();
   }
 });
+
+delBtn.addEventListener("click", function(){
+    localStorage.clear()
+    myLeads = []
+    renderLeads()
+})
 
 // function renderLeads(){
 //     let listItems = ""
