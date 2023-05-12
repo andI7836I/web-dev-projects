@@ -8,15 +8,15 @@ const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 // localStorage.setItem("myLeads", "www.example.com")
 if (leadsFromLocalStorage){
     myLeads = leadsFromLocalStorage
-    renderLeads()
+    render(myLeads)
 }
 
 inputBtn.addEventListener("click", function() {
     myLeads.push(inputEl.value)
-    renderLeads()
+    render(myLeads)
     inputEl.value = ""
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
-    renderLeads()
+    render(myLeads)
 })
 
 inputEl.addEventListener("keyup", function(event) {
@@ -28,7 +28,7 @@ inputEl.addEventListener("keyup", function(event) {
 delBtn.addEventListener("click", function(){
     localStorage.clear()
     myLeads = []
-    renderLeads()
+    render(myLeads)
 })
 
 // function renderLeads(){
@@ -45,17 +45,17 @@ delBtn.addEventListener("click", function(){
 //     }
 //     ulEl.innerHTML = listItems 
 //     }
-function renderLeads(){
+function render(leads){
     let listItems = "";
-    for (let i in myLeads){
-        let url = myLeads[i];
+    for (let i in leads){
+        let url = leads[i];
         if (!isAbsoluteURL(url)) {
             url = "http://" + url;
         }
         listItems += `
             <li>
                 <a target='_blank' href='${url}'>
-                    ${myLeads[i]}
+                    ${leads[i]}
                 </a>
             </li>
         `;
