@@ -30,9 +30,9 @@ inputBtn.addEventListener("click", function() {
 
 inputEl.addEventListener("keyup", function(event) {
   if (event.key === "Enter") {
-    inputBtn.click();
+    inputBtn.click()
   }
-});
+})
 
 delBtn.addEventListener("click", function(){
     localStorage.clear()
@@ -55,11 +55,11 @@ delBtn.addEventListener("click", function(){
 //     ulEl.innerHTML = listItems 
 //     }
 function render(leads){
-    let listItems = "";
+    let listItems = ""
     for (let i in leads){
-        let url = leads[i];
+        let url = leads[i]
         if (!isAbsoluteURL(url)) {
-            url = "http://" + url;
+            url = "http://" + url
         }
         listItems += `
             <li>
@@ -67,12 +67,12 @@ function render(leads){
                     ${leads[i]}
                 </a>
             </li>
-        `;
+        `
     }
-    ulEl.innerHTML = listItems;
+    ulEl.innerHTML = listItems
 }
 
 function isAbsoluteURL(url) {
-    const pattern = /^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/;
-    return pattern.test(url);
+    const pattern = /^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/
+    return pattern.test(url)
 }
